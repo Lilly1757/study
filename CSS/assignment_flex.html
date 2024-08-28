@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+      .flex {
+        height: 100vh;
+        display: flex;
+        gap: 64px;
+        align-items: center;
+      }
+      .flex2 {
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 32px;
+      }
+      .flex3 {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      h1 {
+        border: 5px solid gray;
+        padding: 10px;
+        margin: 0px;
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex">
+      <h1>A</h1>
+      <div class="flex2">
+        <h1>B</h1>
+        <h1>C</h1>
+      </div>
+      <div class="flex3">
+        <h1>E</h1>
+        <h1>D</h1>
+      </div>
+    </div>
+  </body>
+</html>

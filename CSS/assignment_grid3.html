@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .root {
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        display: flex;
+        flex-direction: column;
+        margin: 0%;
+        gap: 5px;
+      }
+      .container {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        padding: 5px;
+      }
+      .footer {
+        display: flex;
+        flex-direction: row;
+      }
+      .item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid greenyellow;
+      }
+      .header_menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .header_menu_icon {
+        display: flex;
+        flex-direction: row;
+      }
+      .search {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0%;
+        gap: 5px;
+      }
+      .searchbar {
+        display: flex;
+        flex-direction: row;
+        border: 1px solid greenyellow;
+      }
+      .searchbar > div:nth-child(2) {
+        padding: 16px;
+        width: 500px;
+      }
+      .search_icon {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 8px;
+      }
+      .left_section {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .news {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid greenyellow;
+      }
+      .news_main{
+        padding: 16px;
+      }
+      .news_bottom{
+        border-top: 1px solid greenyellow;
+        padding: 5px;
+      }
+      .container_menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+      }
+      .news_icon {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+      }
+      .seemore {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 3px;
+      }
+      .topic {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid greenyellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="root">
+      <div class="header">
+        <div class="header_menu" style="padding: 16px">
+          <div class="header_menu_icon">
+            <div class="item">```</div>
+            <div class="item">pay</div>
+          </div>
+          <div class="header_menu_icon">
+            <div class="item">```</div>
+            <div class="item">alarm</div>
+            <div class="item">shoppingcart</div>
+          </div>
+        </div>
+      </div>
+      <div class="search">
+        <div class="searchbar">
+          <div class="item">N</div>
+          <div class="item">input</div>
+          <div class="item">Q</div>
+        </div>
+        <div class="search_icon">
+          <div class="item">메일</div>
+          <div class="item">카페</div>
+          <div class="item">블로그</div>
+          <div class="item">쇼핑</div>
+          <div class="item">뉴스</div>
+          <div class="item">증권</div>
+          <div class="item">부동산</div>
+          <div class="item">지도</div>
+          <div class="item">웹툰</div>
+          <div class="item">지지직</div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="left_section">
+          <div class="news">
+            <div class="news_main">
+              <div class="container_menu">
+                <div>뉴스트랜드</div>
+                <div>/언론사편집</div>
+                <div>/엔터</div>
+                <div>/쇼핑투데이</div>
+                <div>/스포츠</div>
+                <div>/경제</div>
+              </div>
+              <div class="searchbar">
+                <div class="item">전체언론사</div>
+                <div class="item">bar</div>
+                <div class="item">뉴스스탠드</div>
+                <div class="item">뉴스홈</div>
+              </div>
+              <div class="news_icon">
+                <div class="item">머니투데이</div>
+                <div class="item">파이넨셜뉴스</div>
+                <div class="item">세계일보</div>
+                <div class="item">디지털타임스</div>
+                <div class="item">미디어</div>
+                <div class="item">뉴스타파</div>
+                <div class="item">kbs</div>
+                <div class="item">jiji</div>
+                <div class="item">프레시안</div>
+                <div class="item">한국일보</div>
+                <div class="item">서울경제</div>
+                <div class="item">경향신문</div>
+                <div class="item">연합뉴스</div>
+                <div class="item">스포츠조선</div>
+                <div class="item">sbs</div>
+                <div class="item">경기일보</div>
+                <div class="item">경기신문</div>
+                <div class="item">인천일보</div>
+                <div class="item">mbc</div>
+                <div class="item">jtbc</div>
+                <div class="item">ytn</div>
+                <div class="item">kbs2</div>
+                <div class="item">매일경제</div>
+                <div class="item">기호일보</div>
+              </div>
+            </div> 
+            <div class="news_bottom">
+              <div class="seemore">
+                <div class="item">-</div>
+                <div class="item">언론사더보기</div>
+                <div class="item">숫자</div>
+                <div class="item">-</div>
+              </div>
+            </div>
+          </div>
+          <div class="topic">
+            <div class="container_menu">
+              <div>추천・구독</div>
+              <div>/자동차</div>
+              <div>/웹툰</div>
+              <div>/패션뷰티</div>
+              <div>/레시피</div>
+              <div>/리빙</div>
+              <div>/책방</div>
+              <div>/지식+</div>
+              <div>/건강</div>
+              <div>/게임</div>
+            </div>
+          </div>
+        </div>
+        <div class="right_section">
+          <div class="login"></div>
+          <div class="weather">
+            <div class="title"></div>
+            <div class="content"></div>
+          </div>
+          <div class="stock market">
+            <div class="title"></div>
+            <div class="content"></div>
+          </div>
+          <div class="widgets">
+            <div class="calender"></div>
+            <div class="music"></div>
+            <div class="mobile"></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer"></div>
+    </div>
+  </body>
+</html>
