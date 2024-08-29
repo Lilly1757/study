@@ -1,0 +1,23 @@
+.gnb {
+  border-bottom: 1px solid #dddddd;
+}
+
+#logo {
+  height: 20px;
+}
+
+ul.menu {
+  display: inline-block;
+  margin: 0;
+  list-style: none;
+}
+
+ul.menu > li {
+  margin: 16px;
+  display: inline-block;
+}
+
+.gnb,
+.main {
+  padding: 16px;
+}
