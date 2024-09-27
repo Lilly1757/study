@@ -6,7 +6,7 @@ function updateToDo(event) {
 }
 
 for(let i = 0; i <items.length; i++) {
-  item[i].addEventListener('click',updateToDo);
+  items[i].addEventListener('click',updateToDo);
 }
 
 
