@@ -1,11 +1,7 @@
-import HandIcon from './HandIcon';
+import HandIcon from "./HandIcon";
 
-function HandButton({ value, onClick }) {
-  return ( 
-    <button onClick={() => onClick(value)}>
-      <HandIcon value={value} />
-    </button>
-  )
+function HandButton({ children, onClick }) {
+  return <button onClick={onClick}>{children}</button>;
 }
 
 export default HandButton;
