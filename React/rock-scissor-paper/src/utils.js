@@ -1,9 +1,9 @@
-const HANDS = ['rock', 'scissor', 'paper'];
+const HANDS = ["rock", "scissor", "paper"];
 
 const WINS = {
-  rock: 'scissor',
-  scissor: 'paper',
-  paper: 'rock',
+  rock: "scissor",
+  scissor: "paper",
+  paper: "rock",
 };
 
 export function compareHand(a, b) {
@@ -20,4 +20,3 @@ export function generateRandomHand() {
   const idx = random(HANDS.length);
   return HANDS[idx];
 }
-

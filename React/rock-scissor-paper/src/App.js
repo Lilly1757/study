@@ -8,24 +8,28 @@ const INITIAL_VALUE = "rock";
 
 function getResult(me, other) {
   const comparison = compareHand(me, other);
-  if (comparison > 0) return "승리";
-  if (comparison < 0) return "패배";
+  if (comparison === 1) return "승리";
+  if (comparison === -1) return "패배";
   return "무승부";
 }
 
 function App() {
   const [hand, setHand] = useState(INITIAL_VALUE);
   const [otherHand, setOtherHand] = useState(INITIAL_VALUE);
+  const [gameHistory, setGameHistory] = useState([]);
 
   const handleButtonClick = (nextHand) => {
     const nextOtherhand = generateRandomHand();
+    const nextHistoryItem = getResult(nextHand, nextOtherhand);
     setHand(nextHand);
     setOtherHand(nextOtherhand);
+    setGameHistory((prev) => [...prev, nextHistoryItem]);
   };
 
   const handleClearClick = () => {
     setHand(INITIAL_VALUE);
     setOtherHand(INITIAL_VALUE);
+    setGameHistory([]);
   };
 
   return (
@@ -37,6 +41,7 @@ function App() {
         VS
         <HandIcon value={otherHand} />
       </div>
+      <p>승부 기록: {gameHistory.join(", ")}</p>
       <div>
         <HandButton value="rock" onClick={handleButtonClick} />
         <HandButton value="scissor" onClick={handleButtonClick} />
