@@ -1,16 +1,16 @@
-import rockImg from "./assets/rock.svg";
-import scissorImg from "./assets/scissor.svg";
-import paperImg from "./assets/paper.svg";
+import rockImg from './assets/rock.svg';
+import scissorImg from './assets/scissor.svg';
+import paperImg from './assets/paper.svg';
 
-const HAND_IMAGES = {
+const IMAGES = {
   rock: rockImg,
   scissor: scissorImg,
   paper: paperImg,
 };
 
-function HandIcon({ value }) {
-  const src = HAND_IMAGES[value];
-  return <img src={src} alt={value} />;
+function HandIcon({ className, value }) {
+  const src = IMAGES[value];
+  return <img className={className} src={src} alt={value} />;
 }
 
 export default HandIcon;
