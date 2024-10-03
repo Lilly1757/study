@@ -34,7 +34,7 @@ function App() {
       <h2>총점</h2>
       <p>{sum}</p>
       <h2>기록</h2>
-      <p>{gameHistory.join(', ')}</p>
+      <p>{gameHistory.join(", ")}</p>
     </div>
   );
 }
