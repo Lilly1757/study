@@ -2,6 +2,8 @@ import { getReviews } from "../api";
 import ReviewList from "./ReviewList";
 import { useEffect, useState } from "react";
 
+const LIMIT = 6;
+
 function App() {
   const [order, setOrder] = useState("createdAt");
   const [items, setItems] = useState([]);
@@ -13,13 +15,13 @@ function App() {
     const nextItems = items.filter((item) => item.id !== id);
     setItems(nextItems);
   };
-  const handleLoad = async (orderQuery) => {
-    const { reviews } = await getReviews(orderQuery);
+  const handleLoad = async (options) => {
+    const { reviews } = await getReviews(options);
     setItems(reviews);
   };
 
   useEffect(() => {
-    handleLoad(order);
+    handleLoad({ order, offset: 0, limit: LIMIT });
   }, [order]);
 
   return (
