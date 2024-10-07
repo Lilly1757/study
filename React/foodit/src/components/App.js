@@ -1,18 +1,19 @@
-import { useEffect, useState } from 'react';
-import { getFoods } from '../api';
-import FoodList from './FoodList';
+import { useEffect, useState } from "react";
+import { getFoods } from "../api";
+import FoodList from "./FoodList";
+import FoodForm from "./FoodForm";
 
 function App() {
-  const [order, setOrder] = useState('createdAt');
+  const [order, setOrder] = useState("createdAt");
   const [cursor, setCursor] = useState(null);
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [loadingError, setLoadingError] = useState(null);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
 
-  const handleNewestClick = () => setOrder('createdAt');
+  const handleNewestClick = () => setOrder("createdAt");
 
-  const handleCalorieClick = () => setOrder('calorie');
+  const handleCalorieClick = () => setOrder("calorie");
 
   const handleDelete = (id) => {
     const nextItems = items.filter((item) => item.id !== id);
@@ -53,26 +54,27 @@ function App() {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    setSearch(e.target['search'].value);
+    setSearch(e.target["search"].value);
   };
-
 
   const sortedItems = items.sort((a, b) => b[order] - a[order]);
 
   useEffect(() => {
     handleLoad({
-      order,search
+      order,
+      search,
     });
   }, [order, search]);
 
   return (
     <div>
+      <FoodForm />
       <button onClick={handleNewestClick}>최신순</button>
       <button onClick={handleCalorieClick}>칼로리순</button>
-    <form onSubmit={handleSearchSubmit}>
-      <input name='search'/>
-      <button type='submit'>검색</button>
-    </form>
+      <form onSubmit={handleSearchSubmit}>
+        <input name="search" />
+        <button type="submit">검색</button>
+      </form>
       <FoodList items={sortedItems} onDelete={handleDelete} />
       {cursor && (
         <button disabled={isLoading} onClick={handleLoadMore}>
