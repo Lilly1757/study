@@ -2,29 +2,36 @@ import { useState } from "react";
 import "./FoodForm.css";
 
 function FoodForm() {
-  const [title, setTitle] = useState("");
-  const [calorie, setCalorie] = useState(0);
-  const [content, setContent] = useState("");
+  const [value, setValue] = useState({
+    title: "",
+    calorie: 0,
+    content: "",
+  })
 
-  const handleTitleChange = (e) => setTitle(e.target.value);
-
-  const handleCalorieChange = (e) => {
-    const nextCalorie = Number(e.target.value) || 0;
-    setCalorie(nextCalorie);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setValue((prevValues) => ({
+      ...prevValues,
+      [name]: value,
+    }));
   };
 
-  const handleContentChange = (e) => setContent(e.target.value);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(value);
+  };
 
   return (
-    <form className="foodForm">
-      <input name="title" value={title} onChange={handleTitleChange} />
+    <form className="foodForm" onSubmit={handleSubmit}>
+      <input name="title" value={value.title} onChange={handleChange} />
       <input
         type="number"
         name="calorie"
-        value={calorie}
-        onChange={handleCalorieChange}
+        value={value.calorie}
+        onChange={handleChange}
       />
-      <input name="content" value={content} onChange={handleContentChange} />
+      <input name="content" value={value.content} onChange={handleChange} />
+      <button type="submit">확인</button>
     </form>
   );
 }
