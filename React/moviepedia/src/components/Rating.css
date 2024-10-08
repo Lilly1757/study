@@ -1,0 +1,11 @@
+.RatingInput {
+  cursor: pointer;
+}
+
+.Rating-start {
+  color: slategray;
+}
+
+.Rating-start.selected {
+  color: yellowgreen;
+}
