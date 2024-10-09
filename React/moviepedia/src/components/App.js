@@ -23,11 +23,15 @@ function App() {
     setItems(nextItems);
   };
 
-  const handleLoad = async (options) => {
+  const handleLoad = async () => {
     let result;
     try {
       setIsLoading(true);
-      result = await getReviews(options);
+      result = await getReviews({
+        order,
+        offset,
+        limit: LIMIT,
+      });
     } catch (error) {
       setLoadingError(error);
     } finally {
@@ -35,21 +39,26 @@ function App() {
     }
 
     const { paging, reviews } = result;
-    if (options.offset === 0) {
+
+    if (offset === 0) {
       setItems(reviews);
     } else {
       setItems((prevItems) => [...prevItems, ...reviews]);
     }
-    setOffset(options.offset + reviews.length);
+    setOffset((prevOffset) => prevOffset + reviews.length);
     setHasNext(paging.hasNext);
   };
 
   const handleLoadMore = () => {
-    handleLoad({ order, offset, limit: LIMIT });
+    handleLoad();
+  };
+
+  const handleSubmitSuccess = (review) => {
+    setItems((prevItems) => [review, ...prevItems]);
   };
 
   useEffect(() => {
-    handleLoad({ order, offset: 0, limit: LIMIT });
+    handleLoad();
   }, [order]);
 
   return (
@@ -58,7 +67,7 @@ function App() {
         <button onClick={handleNewestClick}>최신순</button>
         <button onClick={handleBestClick}>베스트순</button>
       </div>
-      <ReviewForm />
+      <ReviewForm onSubmitSuccess={handleSubmitSuccess} />
       <ReviewList items={sortedItems} onDelete={handleDelete} />
       {hasNext && (
         <button disabled={isLoading} onClick={handleLoadMore}>

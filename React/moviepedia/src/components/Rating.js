@@ -5,7 +5,6 @@ function Star({ selected = false, rating, onSelect, onHover }) {
   const className = `Rating-start ${selected ? "selected" : ""}`;
 
   const handleClick = onSelect ? () => onSelect(rating) : undefined;
-
   const handleMouseOver = onHover ? () => onHover(rating) : undefined;
 
   return (
@@ -14,7 +13,7 @@ function Star({ selected = false, rating, onSelect, onHover }) {
       onClick={handleClick}
       onMouseOver={handleMouseOver}
     >
-      *
+      ★
     </span>
   );
 }
