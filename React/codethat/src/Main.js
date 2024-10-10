@@ -4,6 +4,8 @@ import HomePage from "./pages/HomePage";
 import CoursePage from './pages/CoursePage';
 import CourseListPage from './pages/CourseListPage';
 import WishlistPage from './pages/WishlistPage';
+import QuestionPage from './pages/QuestionPage';
+import QuestionListPage from './pages/QuestionListPage';
 
 function Main() {
   return (
@@ -17,6 +19,8 @@ function Main() {
             element={<CoursePage />}
           />
           <Route path="wishlist" element={<WishlistPage />} />
+          <Route path="questions" element={<QuestionListPage />} />
+          <Route path="questions/616825" element={<QuestionPage />} />
         </Routes>
       </App>
     </BrowserRouter>
